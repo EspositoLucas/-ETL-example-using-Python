@@ -10,7 +10,7 @@ import sqlite3
 
 DATABASE_LOCATION = "sqlite:///my_played_tracks.sqlite"
 USER_ID = "11150094560" # your Spotify username
-TOKEN = "BQAkD3Sc5qW7ECDnnr_yHNot55T7Xsx-4XETx2LQPeYNkMpFRw_2vbOprDDLiO90IJ-Rp4FDBTWO6WpJrwHm185mKK4_O4RvaoaZcSCT7KREmm5P54oyFMIsalZJT0y_-W2_se3NfxA9DftjKZ_3O7wMvXPNYFwRHqESeERbaqccbd8gB9SdPw" # your Spotify API token
+TOKEN = "BQApa8JlKKCiF-8Tt2n_wU467531KuoAa9Dvoy7p7HajYemn8kdRHrT-S3Ul0eyetKqgi-JURTV5j42XTJguKb0zcjW_X47dSU6M5QTz5p6viOvaZEmPJtG5YI1sahTlSVxJnq3klvMnI3pzXmSaXF63ue8dEWgT7z8-ltSQgASgrS5hQgC0uw" # your Spotify API token
 
 
 def check_if_valid_data(df: pd.DataFrame) -> bool:

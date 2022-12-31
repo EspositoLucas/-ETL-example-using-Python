@@ -41,8 +41,8 @@ def check_if_valid_data(df: pd.DataFrame) -> bool:
 
 def run_spotify_etl():
     DATABASE_LOCATION = "sqlite:///my_played_tracks.sqlite"
-    USER_ID = ''
-    TOKEN = ''
+    USER_ID = '11150094560'
+    TOKEN = 'BQApa8JlKKCiF-8Tt2n_wU467531KuoAa9Dvoy7p7HajYemn8kdRHrT-S3Ul0eyetKqgi-JURTV5j42XTJguKb0zcjW_X47dSU6M5QTz5p6viOvaZEmPJtG5YI1sahTlSVxJnq3klvMnI3pzXmSaXF63ue8dEWgT7z8-ltSQgASgrS5hQgC0uw'
 
       # Extract part of the ETL process
  
@@ -54,7 +54,7 @@ def run_spotify_etl():
     
     # Convert time to Unix timestamp in miliseconds      
     today = datetime.datetime.now()
-    yesterday = today - datetime.timedelta(days=1)
+    yesterday = today - datetime.timedelta(days=10)
     yesterday_unix_timestamp = int(yesterday.timestamp()) * 1000
 
     # Download all songs you've listened to "after yesterday", which means in the last 24 hours      
