@@ -1,2 +1,2 @@
 # -ETL-example-using-Python  <img src="https://user-images.githubusercontent.com/79590470/223873551-79ac13c5-9bcf-4c8f-9b80-5fafa0760212.png" height=25>
- An ETL process example based on Spotify API data using Python 3, Airflow and SQL
+ An ETL process example based on Spotify API data using Python 3, Airflow and SQL. This feed (data pipeline) will run daily, and it will download the data about the songs that were listened to during a day, and save that data in a SQLite database on a user local machine
