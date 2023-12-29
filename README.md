@@ -1,2 +1,51 @@
-# -ETL-example-using-Python  <img src="https://user-images.githubusercontent.com/79590470/223873551-79ac13c5-9bcf-4c8f-9b80-5fafa0760212.png" height=25>
- An ETL process example based on Spotify API data using Python 3, Airflow and SQL. This feed (data pipeline) will run daily, and it will download the data about the songs that were listened to during a day, and save that data in a SQLite database on a user local machine
+# - Spotify API ETL Process
+
+This POC extract data from the Spotify API, transform the data filtering unwanted records and loads to PG database using Alembic for database versioning.
+
+## Inspired on
+Karolina Sowinska - Data Engineering
+https://www.youtube.com/playlist?list=PLNkCniHtd0PNM4NZ5etgYMw4ojid0Aa6i
+
+CodinEric -  Data Engineering
+https://youtube.com/@CodinEric?si=slN4oCnuDbhr6FIn
+
+## Extract
+I am using the spotify api to extract data from my account
+### Get Spotify creds
+https://developer.spotify.com/dashboard/login
+
+
+## Transform
+Using pandas I can filter the unwanted records, as you can see you have a loosly time window and I am plainning on running this as tasks of Airflow :P
+
+## Load
+
+## Local postgres db
+```
+docker run -d --name spoty_etl_pg -v my_dbdata:/var/lib/postgresql/data -p 5432:5432 -e POSTGRES_PASSWORD=postgres -e POSTGRES_USER=postgres -e POSTGRES_DB=spotipy postgres
+```
+test it with
+```
+docker exec -it spoty_etl_pg psql -h localhost -U postgres -W spotipy
+```
+
+## Alembic
+Add alembic to the project
+```
+alembic init alembic
+```
+
+### Known issue
+when instaling alembic you might need to also add
+```
+poetry add psycopg2-binary
+```
+
+### Create a Migration Script
+```
+alembic revision --autogenerate -m "First"
+```
+
+### Running our First Migration
+```
+alembic upgrade head
