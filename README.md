@@ -1,4 +1,4 @@
-# - Spotify API ETL POC
+# Spotify API ETL POC
 
 This POC extract data from the Spotify API, transform the data filtering unwanted records and loads to PG database using Alembic for database versioning.
 
