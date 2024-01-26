@@ -46,6 +46,6 @@ poetry add psycopg2-binary
 alembic revision --autogenerate -m "First"
 ```
 
-### Running our First Migration
+### Running First Migration
 ```
 alembic upgrade head
